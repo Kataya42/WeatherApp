@@ -1,18 +1,13 @@
-import logo from './logo.svg';
+import React from "react"
 import './App.css';
-import Button from "@material-ui/core/Button"
+//import Button from "@material-ui/core/Button"
+//import SaveIcon from "@material-ui/icons/Save"
+import Weather from "./app_component/weather.component"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Button>
-          Hello World
-        </Button>
-
-
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+     <Weather/>
     </div>
   );
 }
