@@ -8,6 +8,7 @@ body {
   background: url("./assets/dorime.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: "center";
 }
 
 code {

@@ -5,54 +5,63 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Alert from "@material-ui/lab/Alert";
-import {createMuiTheme, ThemeProvider} from "@material-ui/core/styles"
+import {createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
 
 
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => (
+{
 
-    form: {
+    form:
+    {
         width: '100%',
         margin: theme.spacing(3, 0, 0),
         padding: "30 30px",
-        
+
     },
-    submit: {
+    submit:
+    {
         background: "linear-gradient(45deg, #FF6B8B, #FF8E53)",
         margin: theme.spacing(1, 0, 0),
         textTransform: "none",
         width: "89%",
         minHeight: "20ox",
         maxHeight: "40px",
-        
+
     },
-    textField: {
+    textField:
+    {
         color: "black",
         background: "transparent",
         borderRadius: theme.shape.borderRadius,
         borderColor: theme.palette.primary.main
-        
+
     }
 
-  }));
-  
-  const theme = createMuiTheme({
-    palette: {
+}));
+
+const theme = createMuiTheme(
+{
+    palette:
+    {
         type: 'light',
-        primary: {
-          main: '#FF8E53',
+        primary:
+        {
+            main: '#FF8E53',
         },
-        secondary: {
-          main: '#FF6B8B',
+        secondary:
+        {
+            main: '#FF6B8B',
         },
-      },
-    });
+    },
+});
 
 
-const Form = props =>{
+const Form = props =>
+{
     const classes = useStyles();
-    return(
+    return (
         <Container component="main" maxWidth="sm">
 
             <div>
@@ -102,8 +111,6 @@ const Form = props =>{
                                 color= "primary"
                                 className={classes.submit}>
                                 
-                                
-                                    
                                     Get Weather
                                     
                                 </Button>
@@ -117,8 +124,10 @@ const Form = props =>{
         </Container>
     );
 };
-function error(){
-    return(
+
+function error()
+{
+    return (
         <Alert 
         severity="warning"
         >

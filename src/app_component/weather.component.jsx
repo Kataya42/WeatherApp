@@ -3,7 +3,8 @@ import Icon from "@mdi/react"
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
-const Weather = (props)=> {
+const Weather = (props) =>
+{
     return (
         <Container component="main" maxWidth="xs" padding="6">
                 <Typography component="h1">
@@ -19,9 +20,9 @@ const Weather = (props)=> {
                     size={4}
                     />
                 </Typography>
-                Temp {props.tempCelius ? (
+                    {props.tempCelius ? (
 
-                <Typography component="h1" className="py-1">{props.tempCelius}&deg;
+                <Typography component="h1" className="py-1">Temp {props.tempCelius}&deg;
                 </Typography> ) : null}
                 
 
@@ -41,15 +42,17 @@ const Weather = (props)=> {
     );
 };
 
-function minmaxTemp(min,max){
-    if (min && max){
-        return(
+function minmaxTemp(min, max)
+{
+    if (min && max)
+    {
+        return (
             <Typography component="h3">
                 Min <span className="py-4">{min}&deg; </span>
                 Max <span className="py-5">{max}&deg; </span>
             </Typography>
         );
-}
+    }
 }
 
 export default Weather;
