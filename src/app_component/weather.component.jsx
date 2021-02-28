@@ -1,43 +1,53 @@
 import React from "react";
 import Icon from "@mdi/react"
-
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 const Weather = (props)=> {
     return (
-        <div className="container">
-            <div className="cards">
-                <h1>
-                    {props.city}
-                </h1>
-
-                <h5 className="py-4">          
+        <Container component="main" maxWidth="xs" padding="6">
+                <Typography component="h1">
+                    " "
+                </Typography>
+                
+                <Typography component="h1">
+                {props.city}
+                </Typography>
+     
+                <Typography component="h5">
                     <Icon path={props.weatherIcon}
                     size={4}
                     />
-                </h5>
-                {props.tempCelius ? (
-                <h1 className="py-2">{props.tempCelius}&deg;
-                </h1> ) : null}
+                </Typography>
+                Temp {props.tempCelius ? (
 
-                <h1 className="py-2">
+                <Typography component="h1" className="py-1">{props.tempCelius}&deg;
+                </Typography> ) : null}
+                
+
+                <Typography component="h1" className="py-2"> 
+                   
+
                     {minmaxTemp(props.tempMin,props.tempMax)}
-                </h1>
+              
+                    
+                </Typography>
 
-                <h4 className="py-3">
+                <Typography component="h4" className="py-3">
                     {props.description}
-                </h4>
-            </div>
-        </div>
+                </Typography>
+
+        </Container>
     );
 };
 
 function minmaxTemp(min,max){
     if (min && max){
         return(
-            <h3>
-                <span className="px-4">{min}&deg;</span>
-                <span className="px-4">{max}&deg;</span>
-            </h3>
+            <Typography component="h3">
+                Min <span className="py-4">{min}&deg; </span>
+                Max <span className="py-5">{max}&deg; </span>
+            </Typography>
         );
 }
 }

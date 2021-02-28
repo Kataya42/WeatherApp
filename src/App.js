@@ -7,11 +7,6 @@ import { mdiWeatherRainy as Drizzle} from '@mdi/js';
 import { mdiWeatherFog as Fog} from '@mdi/js';
 import { mdiWeatherSunny as Sun} from '@mdi/js';
 import { mdiWeatherCloudy as Cloud} from '@mdi/js';
-
-
-
-//import Button from "@material-ui/core/Button"
-
 import Weather from "./app_component/weather.component"
 import Form from "./app_component/form.component"
 
