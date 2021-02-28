@@ -10,24 +10,22 @@ import {createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
 
 
 
+
 const useStyles = makeStyles((theme) => (
 {
 
     form:
     {
-        width: '100%',
-        margin: theme.spacing(3, 0, 0),
-        padding: "30 30px",
+        margin: theme.spacing(5, 0, 0),
 
     },
     submit:
     {
         background: "linear-gradient(45deg, #FF6B8B, #FF8E53)",
-        margin: theme.spacing(1, 0, 0),
+        margin: theme.spacing(1, 1, 5),
         textTransform: "none",
-        width: "89%",
-        minHeight: "20ox",
-        maxHeight: "40px",
+        width: "50%",
+        fontWeight: "bold"
 
     },
     textField:
@@ -35,7 +33,11 @@ const useStyles = makeStyles((theme) => (
         color: "black",
         background: "transparent",
         borderRadius: theme.shape.borderRadius,
-        borderColor: theme.palette.primary.main
+        borderColor: theme.palette.primary.main,
+        margin: theme.spacing(1, 1, 1),
+        width: "50%",
+        height: "80%",
+        
 
     }
 
@@ -62,7 +64,7 @@ const Form = props =>
 {
     const classes = useStyles();
     return (
-        <Container component="main" maxWidth="sm">
+        <Container component="main">
 
             <div>
                 {props.error ? error() : null}
@@ -72,13 +74,14 @@ const Form = props =>
 
             <form className={classes.form} onSubmit={props.loadweather}>
 
-                <Grid 
-                container 
-                spacing={3}
-                alignItems="center"
-                justify="center"
-                >
-                    <Grid item xs={12} sm= {6}>
+            <Grid
+            container 
+            item xs={12}
+            direction="column"
+            justify="flex-start"
+            alignItems="center"
+            >
+                    
 
                             <TextField 
                             variant="outlined"
@@ -89,8 +92,7 @@ const Form = props =>
                             placeholder= "City"
                             />
 
-                            </Grid> 
-                            <Grid item xs={12} sm={6}>
+                           
                             <TextField
                             variant="outlined"
                             type="text" 
@@ -100,22 +102,17 @@ const Form = props =>
                             placeholder= "Country"   
                             
                             />                      
-                            </Grid> 
+              
 
 
                                 <Button 
-                                fullWidth
-                                size= "large"
                                 type="submit"                          
                                 variant="contained"
                                 color= "primary"
-                                className={classes.submit}>
-                                
+                                className={classes.submit}>  
                                     Get Weather
-                                    
+                                 
                                 </Button>
-
-                         
 
                         
                 </Grid>    
