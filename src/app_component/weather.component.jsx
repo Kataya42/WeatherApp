@@ -7,7 +7,7 @@ const Weather = (props)=> {
         <div className="container">
             <div className="cards">
                 <h1>
-                    {props.city}, {props.country}
+                    {props.city}
                 </h1>
 
                 <h5 className="py-4">          
@@ -15,10 +15,9 @@ const Weather = (props)=> {
                     size={4}
                     />
                 </h5>
-
-                <h1 className="py-2">
-                     {props.tempCelius}&deg;
-                </h1>
+                {props.tempCelius ? (
+                <h1 className="py-2">{props.tempCelius}&deg;
+                </h1> ) : null}
 
                 <h1 className="py-2">
                     {minmaxTemp(props.tempMin,props.tempMax)}
@@ -33,12 +32,14 @@ const Weather = (props)=> {
 };
 
 function minmaxTemp(min,max){
-    return(
-        <h3>
-            <span className="px-4">{min}&deg;</span>
-            <span className="px-4">{max}&deg;</span>
-        </h3>
-    );
+    if (min && max){
+        return(
+            <h3>
+                <span className="px-4">{min}&deg;</span>
+                <span className="px-4">{max}&deg;</span>
+            </h3>
+        );
+}
 }
 
 export default Weather;

@@ -95,18 +95,21 @@ class App extends React.Component {
         );
   
       const response = await apiCall.json();
-  
       console.log(response);
       
-      this.setState({
-        city: response.name,
-        country: response.sys.country,
-        celcius: this.calCelcius(response.main.temp),
-        tempMax: this.calCelcius(response.main.temp_max),
-        tempMin: this.calCelcius(response.main.temp_min),
-        description: response.weather[0].description,
-      })
-      this.getWeatherIcon(response.weather[0].id)
+        if (response.name){
+          this.setState({
+            city: `${response.name},${response.sys.country}`,
+            celcius: this.calCelcius(response.main.temp),
+            tempMax: this.calCelcius(response.main.temp_max),
+            tempMin: this.calCelcius(response.main.temp_min),
+            description: response.weather[0].description,
+            error: false
+          })
+
+
+        this.getWeatherIcon(response.weather[0].id)
+      }
     } else {
       this.setState({error:true});
     }
