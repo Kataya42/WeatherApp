@@ -1,6 +1,7 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -9,11 +10,8 @@ import {createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
 
 
 
-
-
 const useStyles = makeStyles((theme) => (
 {
-
     form:
     {
         margin: theme.spacing(5, 0, 0),
@@ -21,33 +19,47 @@ const useStyles = makeStyles((theme) => (
     },
     submit:
     {
-        background: "linear-gradient(45deg, #FF6B8B, #FF8E53)",
+        color: "white",
+        background: "linear-gradient(45deg, #830024, #8e3313)",
         margin: theme.spacing(1, 1, 5),
         textTransform: "none",
         width: "50%",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        height: "50%" 
+        
 
     },
     textField:
     {
-        color: "black",
         background: "transparent",
         borderRadius: theme.shape.borderRadius,
-        borderColor: theme.palette.primary.main,
         margin: theme.spacing(1, 1, 1),
         width: "50%",
         height: "80%",
+        color: "red",
         
 
-    }
+    
+    },
+    input: 
+    {
+        '&::placeholder': {
+          textOverflow: 'ellipsis !important',
+          color: "white",
+        },
+        color:"white"
+        
+      }
 
+      
+    
 }));
 
 const theme = createMuiTheme(
 {
     palette:
     {
-        type: 'light',
+        type: 'dark',
         primary:
         {
             main: '#FF8E53',
@@ -81,39 +93,42 @@ const Form = props =>
             justify="flex-start"
             alignItems="center"
             >
-                    
+                <TextField 
+                label="city"
+                variant="outlined"
+                type="text"
+                className={classes.textField}
+                name="city" 
+                autoComplete="off"
+                placeholder= "City"
+                
+                InputProps={{
+                    classes: { input: classes.input}
+                }}
+                />
 
-                            <TextField 
-                            variant="outlined"
-                            type="text"
-                            className={classes.textField}
-                            name="city" 
-                            autoComplete="off"
-                            placeholder= "City"
-                            />
-
-                           
-                            <TextField
-                            variant="outlined"
-                            type="text" 
-                            className={classes.textField}
-                            name="country" 
-                            autoComplete="off"
-                            placeholder= "Country"   
-                            
-                            />                      
-              
-
-
-                                <Button 
-                                type="submit"                          
-                                variant="contained"
-                                color= "primary"
-                                className={classes.submit}>  
-                                    Get Weather
-                                 
-                                </Button>
-
+                <TextField 
+                label="country"
+                variant="outlined"
+                type="text" 
+                className={classes.textField}
+                name="country" 
+                autoComplete="off"
+                placeholder="Country"
+                InputProps={{
+                    classes: { input: classes.input}
+                }}
+                
+                />                      
+                    <Button 
+                    type="submit"                          
+                    variant="contained"
+                    color= "primary"
+                    size= "large"
+                    className={classes.submit}>  
+                        Get Weather
+                        
+                    </Button>
                         
                 </Grid>    
             </form>

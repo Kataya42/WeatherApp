@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("./assets/dorime.png");
+
+  background: url("./assets/background.png");
+  background-color:	#2a3037;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: "center";
