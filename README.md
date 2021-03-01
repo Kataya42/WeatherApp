@@ -5,7 +5,6 @@ A project I made for fun, while learing a bit of react. Inputting a city and tow
 If the city and country dont match, program will prioritize the city. If there is no city by given name or its laking from the api, program will output nothing.
 Trying to press the button while either of the fields are empty will give an error. 
 ## Other
-A (non working) demo is available at
+A demo is available at
 https://weatherapp4.azurewebsites.net/
-Which "works" both on desktop and mobile
-(Openweather api calling does not behave properly)
+Which works both on desktop and mobile
