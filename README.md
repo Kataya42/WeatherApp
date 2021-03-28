@@ -6,5 +6,5 @@ If the city and country dont match, program will prioritize the city. If there i
 Trying to press the button while either of the fields are empty will give an error. 
 ## Other
 A demo is available at
-https://weatherapp4.azurewebsites.net/
+https://weatherappreact.azurewebsites.net/
 Which works both on desktop and mobile
